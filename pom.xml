@@ -16,5 +16,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modules>
+        <module>client_a</module>
+        <module>grant-server</module>
+    </modules>
+
 
 </project>
