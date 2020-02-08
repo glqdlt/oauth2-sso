@@ -5,10 +5,7 @@ import org.springframework.security.oauth2.provider.ClientDetails;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -170,7 +167,7 @@ public class ClientEntity implements ClientDetails {
     @Transient
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return null;
+        return new LinkedList<>();
     }
 
     @Transient

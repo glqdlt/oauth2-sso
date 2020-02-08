@@ -17,7 +17,7 @@
     </parent>
 
     <modules>
-        <module>client_a</module>
+        <module>client-a</module>
         <module>grant-server</module>
     </modules>
 
