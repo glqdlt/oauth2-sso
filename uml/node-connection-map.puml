@@ -1,0 +1,45 @@
+@startuml
+
+actor "operator user" as u
+
+cloud "cms service node" as cms{
+    node "http://a.cms.com" as a_cms
+    node "http://b.cms.com" as b_cms
+    node "http://c.cms.com" as  c_cms
+    node "http://d.cms.com" as d_cms
+    database "session store" as session #orange
+}
+
+a_cms -- session #green
+b_cms -- session #green
+c_cms -- session #green
+d_cms - session #green
+
+cloud "sso service node" as sso{
+    node "login server" as auth #yellow{
+        component "grant resource service" as bb
+        component "auth service" as aa
+        storage "in memory token store" as cc
+    }
+    database "operator user database" as db #orange
+}
+
+aa -- cc
+bb -- cc
+
+auth - db
+bb -- db
+
+a_cms === bb #red
+b_cms === bb #red
+c_cms === bb #red
+d_cms === bb #red
+
+u = a_cms #blue
+u = b_cms #blue
+u == c_cms #blue
+u == d_cms #blue
+
+u == aa #blue
+
+@enduml
