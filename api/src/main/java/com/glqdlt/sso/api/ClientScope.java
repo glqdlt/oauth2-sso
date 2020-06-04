@@ -1,4 +1,4 @@
-package com.glqdlt.sso.grantserver.api;
+package com.glqdlt.sso.api;
 
 /**
  * @author Jhun

@@ -19,7 +19,25 @@
     <modules>
         <module>client-a</module>
         <module>grant-server</module>
+        <module>api</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.glqdlt.sso</groupId>
+            <artifactId>api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.glqdlt.sso</groupId>
+                <version>1.0-SNAPSHOT</version>
+                <artifactId>api</artifactId>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
